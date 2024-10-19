@@ -1,3 +1,4 @@
+#include <algorithm>
 /**
  * Enum representing the result of a search operation.
  */
@@ -215,4 +216,30 @@ public:
         Remove(size_t(0));
     }
 
+    void sort(bool (*compare)(T, T)) {
+        Node<T>* curr = head_;
+        T* arr = new T[size_];
+        int i = 0;
+
+        // Copy list elements to array
+        while (curr != nullptr) {
+            arr[i] = curr->value;
+            curr = curr->next;
+            i++;
+        }
+
+        // Sort the array using the provided comparison function
+        std::sort(arr, arr + size_, compare);
+
+        // Update list elements with sorted array
+        curr = head_;
+        i = 0;
+        while (curr != nullptr) {
+            curr->value = arr[i];
+            curr = curr->next;
+            i++;
+        }
+
+        delete[] arr;
+    }
 };

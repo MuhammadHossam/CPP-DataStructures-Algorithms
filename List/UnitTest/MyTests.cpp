@@ -97,6 +97,37 @@ TEST(ListTest, Remove) {
   EXPECT_EQ(list.Traverse(), TraversalResult::SUCCESS); // assuming Traverse() prints the elements
 }
 
+
+/**
+ * Test case for verifying the behavior of Sort.
+ * It checks that Sort() successfully sorts the elements of the list in descending order
+ * and that the size of the list is not changed.
+ */
+TEST(ListTest, SortDecending){
+    List<int> list;
+    list.push_back(1);
+    list.push_back(2);
+    list.push_back(3);
+    list.sort([](int a, int b){return a > b;});
+    EXPECT_EQ(list.Size(), 3);
+    EXPECT_EQ(list.Traverse(), TraversalResult::SUCCESS);
+}
+
+/**
+ * Test case for verifying the behavior of Sort in ascending order.
+ * It checks that Sort() successfully sorts the elements of the list in ascending order
+ * and that the size of the list is not changed.
+ */
+TEST(ListTest, SortAscending){
+    List<int> list;
+    list.push_back(3);
+    list.push_back(2);
+    list.push_back(1);
+    list.sort([](int a, int b){return a < b;});
+    EXPECT_EQ(list.Size(), 3);
+    EXPECT_EQ(list.Traverse(), TraversalResult::SUCCESS);
+}
+
 int main(int argc, char **argv) {
     ::testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();

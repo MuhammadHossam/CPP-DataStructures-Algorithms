@@ -257,4 +257,8 @@ CMakeFiles/MyListTests.dir/MyTests.cpp.o: \
  /usr/include/gtest/gtest-test-part.h \
  /usr/include/gtest/gtest-typed-test.h \
  /usr/include/gtest/gtest_pred_impl.h /usr/include/gtest/gtest_prod.h \
- /home/muhammad/Repositories/CPP-DataStructures-Algorithms/List/UnitTest/../List.h
+ /home/muhammad/Repositories/CPP-DataStructures-Algorithms/List/UnitTest/../List.h \
+ /usr/include/c++/13/algorithm /usr/include/c++/13/bits/stl_algo.h \
+ /usr/include/c++/13/bits/algorithmfwd.h \
+ /usr/include/c++/13/bits/stl_heap.h \
+ /usr/include/c++/13/bits/uniform_int_dist.h
