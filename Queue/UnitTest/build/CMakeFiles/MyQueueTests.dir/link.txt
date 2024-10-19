@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/MyQueueTests.dir/MyTests.cpp.o -o MyQueueTests  /usr/lib/x86_64-linux-gnu/libgtest.a -lpthread 

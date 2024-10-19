@@ -1,0 +1,3 @@
+/home/muhammad/Repositories/CPP-DataStructures-Algorithms/Queue/UnitTest/build/CMakeFiles/MyQueueTests.dir
+/home/muhammad/Repositories/CPP-DataStructures-Algorithms/Queue/UnitTest/build/CMakeFiles/edit_cache.dir
+/home/muhammad/Repositories/CPP-DataStructures-Algorithms/Queue/UnitTest/build/CMakeFiles/rebuild_cache.dir
