@@ -1,9 +1,11 @@
 
+#include <memory>
+
 template <typename T>
 class Node {
 public:
     T data;
-    Node<T>* next;
+    std::unique_ptr<Node<T>> next;
 
     Node(const T& value) : data(value), next(nullptr) {}
 };
@@ -11,7 +13,7 @@ public:
 template <typename T>
 class Stack {
 private:
-    Node<T>* top;
+    std::unique_ptr<Node<T>> top;
 
 public:
     Stack() : top(nullptr) {}
@@ -21,9 +23,9 @@ public:
      * @param value The value to be stored in the new node.
      */
     void push(const T& value) {
-        Node<T>* newNode = new Node<T>(value);
-        newNode->next = top;
-        top = newNode;
+        std::unique_ptr<Node<T>> newNode = std::make_unique<Node<T>>(value); // Create a new node with the given value.
+        newNode->next = std::move(top); // Top pointer is pointing now to nullptr.
+        top = std::move(newNode); // Top pointer now is pointing to the new node and new node is pointing to nullptr.
     }
 
     /**
@@ -36,9 +38,7 @@ public:
             throw std::runtime_error("Stack is empty");
         }
         T value = top->data;
-        Node<T>* temp = top;
-        top = top->next;
-        delete temp;
+        top = std::move(top->next);
         return value;
     }
 
@@ -54,7 +54,7 @@ public:
      * @throw std::runtime_error if the stack is empty
      * @return The value of the top element
      */
-    T topElement() const {
+    T peek() const {
         if (top == nullptr) {
             throw std::runtime_error("Stack is empty");
         }

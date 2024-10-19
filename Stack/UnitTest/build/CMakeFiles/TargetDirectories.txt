@@ -1,0 +1,3 @@
+/home/muhammad/Repositories/CPP-DataStructures-Algorithms/Stack/UnitTest/build/CMakeFiles/MyStackTests.dir
+/home/muhammad/Repositories/CPP-DataStructures-Algorithms/Stack/UnitTest/build/CMakeFiles/edit_cache.dir
+/home/muhammad/Repositories/CPP-DataStructures-Algorithms/Stack/UnitTest/build/CMakeFiles/rebuild_cache.dir
