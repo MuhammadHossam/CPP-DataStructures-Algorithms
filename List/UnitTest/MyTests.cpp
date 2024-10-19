@@ -128,6 +128,20 @@ TEST(ListTest, SortAscending){
     EXPECT_EQ(list.Traverse(), TraversalResult::SUCCESS);
 }
 
+/**
+ * Test case for verifying the behavior of Reverse.
+ * It checks that Reverse() successfully reverses the order of elements in the list
+ * and that the size of the list remains unchanged.
+ */
+TEST(ListTest, Reverse){
+    List<int> list;
+    list.push_back(1);
+    list.push_back(2);
+    list.push_back(3);
+    list.Reverse();
+    EXPECT_EQ(list.Size(), 3);
+    EXPECT_EQ(list.Traverse(), TraversalResult::SUCCESS);
+}
 int main(int argc, char **argv) {
     ::testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();

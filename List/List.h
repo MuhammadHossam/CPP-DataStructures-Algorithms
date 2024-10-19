@@ -242,4 +242,24 @@ public:
 
         delete[] arr;
     }
+
+    /**
+     * Reverses the linked list in place.
+     * This function modifies the next pointers of the nodes to reverse the list.
+     * It traverses the list from head to tail, keeping track of the previous node.
+     * It then updates the next pointer of the current node to point to the previous node.
+     * Finally, it updates the head pointer to point to the new first node.
+     */
+    void Reverse(){
+        Node<T>* curr = head_;
+        Node<T>* prev = nullptr;
+        Node<T>* next = nullptr;
+        while (curr != nullptr) {
+            next = curr->next;
+            curr->next = prev;
+            prev = curr;
+            curr = next;
+        }
+        head_ = prev;
+    }
 };
