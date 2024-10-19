@@ -1,3 +1,31 @@
+/**
+ * Enum representing the result of a search operation.
+ */
+enum class SearchResult {
+    /**
+     * The value was found in the list.
+     */
+    FOUND,
+    /**
+     * The value was not found in the list.
+     */
+    NOT_FOUND
+};
+
+/**
+ * Enum representing the result of a Traversal operation.
+ */
+enum class TraversalResult {
+    /**
+     * Successful traversal operation.
+     */
+    SUCCESS,
+    /**
+     *  Failed traversal operation.
+     */
+    FAILURE
+};
+
 template <typename T>
 class Node {
 public:
@@ -93,7 +121,7 @@ public:
         size_--; // Decrement the list size
     }
 
-    void Remove(size_t position,const T& value){
+    void Remove(size_t position){
         if (position > size_) {
             throw std::out_of_range("Position out of range");
         }
@@ -184,7 +212,7 @@ public:
      * This is equivalent to calling Remove(0).
      */
     void pop_front(){
-        Remove(0);
+        Remove(size_t(0));
     }
 
 };
