@@ -9,6 +9,9 @@ class BST{
         Node* root;
         BST() : root(nullptr){}
         ~BST(){}        //TBD
+        void insert(int data){root = insertNode(root, data);}
+        bool search(int data){return searchNode(root, data) != nullptr;}
+
 
 
     private:
@@ -33,4 +36,15 @@ class BST{
             return node;
         }
 
+        Node* searchNode(Node* node, int data){
+            if( node == nullptr || node->data == data){
+                return node;
+            }
+            else if(node->data > data){
+                return searchNode(node->left, data);
+            }
+            else if(node->data < data){
+                return searchNode(node->right, data);
+            }
+        }
 };
